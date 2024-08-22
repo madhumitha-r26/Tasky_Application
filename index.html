@@ -9,12 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
 </head>
-<body>
-
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+<body onload="loadInitialData()">
 
     <!-- button for small screen -->
 <div class="add__new__button__mobile_only">
@@ -32,7 +27,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form onsubmit="return false">
                 <div class="mb-3">
                   <label for="imageurl" class="form-label">Image URL</label>
                   <input type="url" class="form-control" id="imageUrl" aria-describedby="imageDesc" placeholder="http://madhumitha/image.png" required>
@@ -47,14 +42,14 @@
                 </div>
                 <div class="mb-3">
                   <label for="taskDescription" class="form-label">Task Description</label>
-                  <textarea type="text" class="form-control" id="taskDescription" placeholder="Task Description!" required></textarea>
+                  <textarea type="text" class="form-control" id="taskDescription" placeholder="Task Description!" required rows="3"></textarea>
                 </div>
                  
             </form>
         </div>
         <div class="modal-footer">
           <button type="button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" type="submit" class="btn btn-primary" onclick="handleSubmit()">Save changes</button>
         </div>
       </div>
     </div>
@@ -90,7 +85,9 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="input-group flex-wrap shadow-lg rounded">
-                        <input type="search" class="form-control" placeholder="Search Your Task Here"  aria-label="Search Task" aria-describedby="basic-addon1">
+                        <input type="search" class="form-control" placeholder="Search Your Task Here"  
+                        aria-label="Search Task" oninput="searchTask.apply(this,arguments)"
+                        aria-describedby="basic-addon1">
                         <span class="input-group-text" id="addon-wrapping">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
@@ -124,7 +121,7 @@
       
       </div>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>

@@ -68,7 +68,8 @@ const handleSubmit = (event) => {
     description: document.getElementById("taskDescription").value,
   };
 
-  if (input.title === "" || input.type === "" || input.description === "") {
+  if (input.title === "" || input.type === "" || input.description === "") 
+  {
     alert("Please fill all fields");
     return;
   }
